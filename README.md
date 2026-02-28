@@ -1,39 +1,27 @@
-# Reto: Validador de Expresiones con Pilas (Nodos) 🚀
+# 🛡️ Laboratorio: Auditoría de Algoritmos (Bubble Sort)
 
-Este proyecto consiste en implementar una **Pila dinámica basada en Nodos** para resolver un problema clásico de ciencias de la computación: el balanceo de signos de agrupación en expresiones matemáticas.
+Este laboratorio tiene como objetivo comprender la eficiencia de los algoritmos de ordenamiento mediante la implementación de **Bubble Sort** (Ordenamiento por Burbuja) y su ejecución sobre un set de **10,000 números**.
 
-## 🎯 Objetivo
-Desarrollar una solución eficiente que determine si una expresión matemática está correctamente balanceada en sus signos de agrupación: `()`, `[]` y `{}`.
+## 📝 ¿Qué es el Ordenamiento por Burbuja?
 
-## 📋 Instrucciones de Desarrollo
+Es un algoritmo sencillo que funciona revisando cada elemento de la lista que va a ser ordenada con el siguiente, intercambiándolos de posición si están en el orden equivocado. Es necesario revisar toda la lista varias veces hasta que no se necesiten más intercambios, lo cual significa que la lista está ordenada.
 
-1.  **Clase `Pila.cs`**:
-    * **`Insertar(char x)`**: Implementar la lógica de *Push* utilizando nodos.
-    * **`Extraer()`**: Implementar la lógica de *Pop*. Debe retornar el carácter superior y mover el puntero.
-    * **`ValidarMatematica(string expresion)`**: 
-        * Recorrer la cadena una sola vez (O(n)).
-        * Ignorar números, letras y operadores.
-        * Utilizar la estructura de Pila para validar la jerarquía y el cierre de signos.
 
-2.  **Restricciones Técnicas**:
-    * **Prohibido** el uso de `System.Collections.Generic.Stack`.
-    * **Prohibido** el uso de métodos de limpieza de strings como `Replace()`.
-    * La gestión de memoria debe ser manual mediante la clase interna `Nodo`.
 
-## ⚙️ Evaluación y Ranking
+### El Algoritmo (Pseudocódigo)
+Para completar este reto, deberás implementar la siguiente lógica en C#:
 
-Al realizar un `git push`, GitHub evaluará automáticamente tu código con diferentes casos de prueba.
-
-* **Puntuación**: Se basa en la exactitud de los resultados.
-* **Ranking de Eficiencia**: Los mejores puestos en el Dashboard de la clase se asignarán a quienes logren el **menor tiempo de ejecución** y el **menor consumo de RAM**. ¡Optimiza tu uso de memoria!
-
-## 💻 Ejecución Local
-
-Para probar tu programa en tu máquina:
-1. Asegúrate de tener instalado el SDK de **.NET 10**.
-2. Ejecuta el comando: `dotnet run`
-3. Ingresa una expresión, por ejemplo: {(3+2)*[5-1]}
-4. La salida debe ser: `true`
-
----
-**Nota:** No modifiques el archivo `Program.cs`.
+```text
+procedimiento bubbleSort(arreglo)
+    n = longitud(arreglo)
+    para i desde 0 hasta n-1:
+        para j desde 0 hasta n-i-1:
+            si arreglo[j] > arreglo[j+1] entonces:
+                // Intercambio (Swap)
+                temporal = arreglo[j]
+                arreglo[j] = arreglo[j+1]
+                arreglo[j+1] = temporal
+            fin si
+        fin para
+    fin para
+fin procedimiento
